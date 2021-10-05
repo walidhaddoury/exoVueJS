@@ -28,5 +28,10 @@ span {
 }
 button {
   margin-right: 15px;
+  border: none;
+  height: 30px;
+  width: 100px;
+  background-color: #555555;
+  color: whitesmoke;
 }
 </style>

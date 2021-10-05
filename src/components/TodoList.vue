@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <h1>Liste des taches</h1>
-    </div>
-    <div>
       <div>
         <input v-model="input" type="text" />
         <button @click="addTask(input)">Ajouter</button>
+      </div>
+      <div>
+        <h1>Liste des taches</h1>
       </div>
       <div>
         <ul>
@@ -48,10 +48,12 @@ export default {
   },
   methods: {
     addTask: function(input) {
-      this.todolist.push({
-        task: input,
-        isDone: false,
-      });
+      if (input != "") {
+        this.todolist.push({
+          task: input,
+          isDone: false,
+        });
+      }
     },
     deleteTask: function(index) {
       this.todolist.splice(index, 1);
@@ -71,5 +73,20 @@ ul {
 }
 li {
   margin-bottom: 10px;
+}
+input {
+  border: none;
+  border-radius: 5%;
+  background-color: #f4f6f8;
+  height: 30px;
+  width: 200px;
+  margin-right: 15px;
+}
+button {
+  border: none;
+  height: 30px;
+  width: 100px;
+  background-color: #555555;
+  color: whitesmoke;
 }
 </style>
